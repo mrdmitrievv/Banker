@@ -12,6 +12,7 @@ class LoginView: UIView {
     let stackView = UIStackView()
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
+    let divider = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +30,7 @@ class LoginView: UIView {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 200, height: 200)
     }
-     */
+    */
     
 }
 
@@ -37,7 +38,9 @@ extension LoginView {
     
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .orange
+        backgroundColor = .secondarySystemBackground
+        layer.cornerRadius = 5
+        clipsToBounds = true
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -51,10 +54,14 @@ extension LoginView {
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.placeholder = "username"
         usernameTextField.delegate = self
+        
+        divider.translatesAutoresizingMaskIntoConstraints = false
+        divider.backgroundColor = .secondarySystemFill
     }
     
     private func layout() {
         stackView.addArrangedSubview(usernameTextField)
+        stackView.addArrangedSubview(divider)
         stackView.addArrangedSubview(passwordTextField)
         addSubview(stackView)
         
@@ -64,6 +71,8 @@ extension LoginView {
             trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
             bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
         ])
+                
+        divider.heightAnchor.constraint(equalToConstant: 1).isActive = true // Another way to create a single constraint
     }
 }
 
