@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
 
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -30,6 +36,39 @@ class LoginViewController: UIViewController {
 
 }
 
+// MARK: - Actions
+extension LoginViewController {
+    @objc func signInButtonDidPressed(sender: UIButton) {
+        errorLabel.isHidden = true
+        login()
+    }
+    
+    private func login() {
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password can not be nil")
+            return
+        }
+        
+        if username.isEmpty || password.isEmpty {
+            showFailure(withMessage: "Username / password can not be blank")
+            return
+        }
+        
+        if username == "Tim" && password == "Qqqqqq" {
+            signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
+        } else {
+            showFailure(withMessage: "Incorrect username / password")
+        }
+    }
+    
+    private func showFailure(withMessage message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+    }
+}
+
+// MARK: - style & layout
 extension LoginViewController {
     
     private func style() {
@@ -72,36 +111,4 @@ extension LoginViewController {
         ])
     }
 }
-
-extension LoginViewController {
-    @objc func signInButtonDidPressed(sender: UIButton) {
-        errorLabel.isHidden = true
-        login()
-    }
-    
-    private func login() {
-        guard let username = username, let password = password else {
-            assertionFailure("Username / password can not be nil")
-            return
-        }
-        
-        if username.isEmpty || password.isEmpty {
-            showFailure(withMessage: "Username / password can not be blank")
-            return
-        }
-        
-        if username == "Tim" && password == "Qqqqqq" {
-            signInButton.configuration?.showsActivityIndicator = true
-        } else {
-            showFailure(withMessage: "Incorrect username / password")
-        }
-    }
-    
-    private func showFailure(withMessage message: String) {
-        errorLabel.text = message
-        errorLabel.isHidden = false
-    }
-}
-
-
 
