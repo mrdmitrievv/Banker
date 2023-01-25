@@ -13,6 +13,7 @@
 		ABD89BE82980143400CDDD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD89BE62980143400CDDD2C /* LaunchScreen.storyboard */; };
 		ABD89BF229801CB600CDDD2C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD89BF129801CB600CDDD2C /* LoginView.swift */; };
 		ABD89BF5298141B600CDDD2C /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD89BF4298141B600CDDD2C /* OnboardingContainerViewController.swift */; };
+		ABD89BF729815A2100CDDD2C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD89BF629815A2100CDDD2C /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ABD89BE92980143400CDDD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD89BF129801CB600CDDD2C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ABD89BF4298141B600CDDD2C /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		ABD89BF629815A2100CDDD2C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD89BDA2980143200CDDD2C /* Banker */,
+				ABD89BEF29801BFD00CDDD2C /* Files */,
 				ABD89BD92980143200CDDD2C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				ABD89BF3298141A000CDDD2C /* Onboarding */,
-				ABD89BEF29801BFD00CDDD2C /* Files */,
 				ABD89BF029801C1400CDDD2C /* Login */,
 				ABD89BDB2980143200CDDD2C /* AppDelegate.swift */,
 			);
@@ -72,6 +74,7 @@
 				ABD89BE92980143400CDDD2C /* Info.plist */,
 			);
 			name = Files;
+			path = Banker;
 			sourceTree = "<group>";
 		};
 		ABD89BF029801C1400CDDD2C /* Login */ = {
@@ -87,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				ABD89BF4298141B600CDDD2C /* OnboardingContainerViewController.swift */,
+				ABD89BF629815A2100CDDD2C /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -163,6 +167,7 @@
 			files = (
 				ABD89BF229801CB600CDDD2C /* LoginView.swift in Sources */,
 				ABD89BE02980143200CDDD2C /* LoginViewController.swift in Sources */,
+				ABD89BF729815A2100CDDD2C /* OnboardingViewController.swift in Sources */,
 				ABD89BDC2980143200CDDD2C /* AppDelegate.swift in Sources */,
 				ABD89BF5298141B600CDDD2C /* OnboardingContainerViewController.swift in Sources */,
 			);
